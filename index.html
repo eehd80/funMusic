@@ -76,199 +76,217 @@
                     <nav id="search" class="navbar navbar-expand-sm">
                         <form class="form-inline" action="/action_page.php">
                           <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                          <button class="btn btn-success" type="submit">Search</button>
+                          <button class="btn" type="submit">Search</button>
                         </form>
                       </nav>
                 </div>
             </header>
-
             <!-- //header -->
-            <!-- slide -->
-            <!-- Swiper -->
-            <div class="swiper-container slide-top">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide slide1">
-                        <p class="txt-ani">
-                            진정한 힐링이 필요하다면, <br />
-                            지금 바로 패러글라이딩
-                        </p>
-                    </div>
-                    <div class="swiper-slide slide2">
-                        <p class="txt-ani">
-                            귀여운 동물이 보고 싶다면, <br />
-                            지금 바로 양떼목장
-                        </p>
-                    </div>
-                    <div class="swiper-slide slide3">
-                        <p class="txt-ani">
-                            꽃향기를 맡고 싶다면, <br />
-                            지금 바로 라벤더
-                        </p>
-                    </div>
-                    <div class="swiper-slide slide4">
-                        <p class="txt-ani">
-                            진정한 맛집을 원한다면, <br />
-                            지금 바로 한우마을
-                        </p>
-                    </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Pause/Play -->
-                <div class="swiper-pause">
-                    <button class="swiper-button-pause">stop</button>
-                    <button class="swiper-button-play">play</button>
-                </div>
-
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            <!-- //slide -->
             <!-- main -->
             <div id="main">
-                <section id="section1" class="sec-g sec-name1">
-                    <div class="container">
-                        <h2 class="sec-tit ani-slide">
-                            <span>타이틀1</span>
-                        </h2>
-                        <div class="sec-cont">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs ani-slide">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
-                                </li>
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content ani-slide">
-                                <div class="tab-pane container active" id="home">home</div>
-                                <div class="tab-pane container fade" id="menu1">menu1</div>
-                                <div class="tab-pane container fade" id="menu2">menu2</div>
+                <div class="row container">
+                    <!-- 게시판 -->
+                    <div class="col-3">
+                        <section id="section1" class="sec- sec-tab">
+                            <div class="container">
+                                <div class="sec-cont">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs ani-slide">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#bbs">공지사항</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#faq">자주하는 질문</a>
+                                        </li>
+                                    </ul>
+        
+                                    <!-- Tab panes -->
+                                    <div class="tab-content ani-slide">
+                                        <div class="tab-pane container active" id="bbs">
+                                           <h2>공지사항</h2>
+                                           <ul class="lst-bbs">
+                                               <li class="fst"><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">관리자</span></a></li>
+                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-11</span></a></li>
+                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-19</span></a></li>
+                                           </ul>
+                                           <a href="#" class="link-more">더보기</a>
+                                        </div>
+                                        <div class="tab-pane container fade" id="faq">
+                                            <h2>자주하는 질문</h2>
+                                           <ul class="lst-bbs">
+                                               <li class="fst"><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">관리자</span></a></li>
+                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-11</span></a></li>
+                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-19</span></a></li>
+                                           </ul>
+                                           <a href="#" class="link-more">더보기</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                </section>
+                    <!-- 추천서비스 -->
+                    <div class="col-9">
+                        <h2 class="sec-tit">추천 서비스</h2>
+                        <ul class="lst-service">
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">악기반주기</strong>
+                                    <p class="txt">악기를 기초 - 고급까지 오케스트라교육</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">QR코드로 제작된 악보</strong>
+                                    <p class="txt">오케스트라/악기별/솔로/이론</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">음악 방탈출게임</strong>
+                                    <p class="txt">음악문제를 풀고 방탈출 게임</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">음악게임</strong>
+                                    <p class="txt">음악관련 게임</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">3분영상</strong>
+                                    <p class="txt">정서활동을 위한 명상교육</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="thumb">
+                                        <img src="./images/thumb-service1.png" alt="">
+                                    </span>
+                                    <strong class="tit">리듬교실</strong>
+                                    <p class="txt">재미있는 리듬교육</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-                <section id="section2" class="sec-g sec-name2">
+                <!-- 추천학습 -->
+                <section class="sec-g sec-study">
                     <div class="container">
-                        <h2 class="sec-tit ani-slide"><span>타이틀2</span></h2>
-                        <div class="sec-cont">
-                            <!-- slide-banner1 -->
-                            <div class="swiper-container slide-banner1 ani-slide">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">Slide 1</div>
-                                    <div class="swiper-slide">Slide 2</div>
-                                    <div class="swiper-slide">Slide 3</div>
-                                    <div class="swiper-slide">Slide 4</div>
-                                    <div class="swiper-slide">Slide 5</div>
-                                    <div class="swiper-slide">Slide 6</div>
-                                    <div class="swiper-slide">Slide 7</div>
-                                    <div class="swiper-slide">Slide 8</div>
-                                    <div class="swiper-slide">Slide 9</div>
-                                    <div class="swiper-slide">Slide 10</div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-
-                            <!-- slide-banner2 -->
-                            <div class="swiper-wrap ani-slide">
-                                <div class="swiper-container slide-banner2">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">Slide 1</div>
-                                        <div class="swiper-slide">Slide 2</div>
-                                        <div class="swiper-slide">Slide 3</div>
-                                        <div class="swiper-slide">Slide 4</div>
-                                        <div class="swiper-slide">Slide 5</div>
-                                        <div class="swiper-slide">Slide 6</div>
-                                        <div class="swiper-slide">Slide 7</div>
-                                        <div class="swiper-slide">Slide 8</div>
-                                        <div class="swiper-slide">Slide 9</div>
-                                        <div class="swiper-slide">Slide 10</div>
-                                    </div>
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next-out"></div>
-                                <div class="swiper-button-prev-out"></div>
-                            </div>
-                        </div>
-                    </div>
+                        <h2 class="sec-tit">추천 학습</h2>
+                        <ul class="row">                    
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                         </ul>
+                    </div>                    
                 </section>
-
-                <section class="sec-g sec-bnr">
-                    <p>배너 글씨</p>
-                </section>
-
-                <section id="section3" class="sec-g sec-name3">
+                <section class="sec-g sec-study">
                     <div class="container">
-                        <h2 class="sec-tit ani-slide"><span>CONTACTS</span></h2>
-                        <div class="sec-cont">
-                            <form
-                                class="gform"
-                                name="contact"
-                                method="post"
-                                action="https://script.google.com/macros/s/AKfycbxwfV1E9-y9rcKVAeElv6-wyk_7cDH5n9QIlDVZWoOwJ1CKWRZXQIJw5w/exec"
-                            >
-                                <div class="row ani-slide">
-                                    <div class="col-md-1">
-                                        <label for="usr">이름</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="text" name="usr" class="form-control" id="usr" value="홍길동" />
-                                    </div>
-                                    <div class="col-md-1 offset-md-1">
-                                        <label for="email">이메일</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <input type="email" name="email" class="form-control" id="email" value="id@gmail.com" />
-                                    </div>
-                                    <!-- 문의내용 -->
-                                    <div class="col-md-1 mt-3">
-                                        <label for="comment">문의내용</label>
-                                    </div>
-                                    <div class="col-md-11 mt-3">
-                                        <textarea
-                                            class="form-control"
-                                            name="commet"
-                                            rows="5"
-                                            id="comment"
-                                            placeholder="문의하실 내용을 적어주세요."
-                                        >
-가라가라 메일아 가라~~~~</textarea
-                                        >
-                                    </div>
-                                </div>
-                                <div class="row mt-4 ani-slide">
-                                    <div class="col-md-2 offset-md-4">
-                                        <button type="submit" class="btn btn-danger">보내기</button>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <button type="reset" class="btn btn-secondary">취소</button>
-                                    </div>
-                                </div>
-
-                                <div class="thankyou_message alert alert-success alert-dismissible fade show mt-4">
-                                    <div class="inner">
-                                        <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
-                                        <strong>Success!</strong> 문의 주셔서 감사합니다.
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                        <h2 class="sec-tit">추천 레슨</h2>
+                        <ul class="row">                    
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                            <li class="col-3">
+                                <a href="#">
+                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
+                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
+                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
+                                    <b>사회</b>
+                                    <em>초등 | 6학년</em>
+                                </a>
+                            </li>
+                         </ul>
+                    </div>                    
                 </section>
             </div>
             <!-- //main -->
             <!-- footer -->
-            <footer></footer>
+            <footer>
+                <div class="container">
+                    <h1>
+                        <a href="#" class="logo">SM</a>
+                    </h1>
+                    <div class="foot-info">
+                        
+                    </div>
+                </div>
+            </footer>
             <!-- //footer -->
         </div>
 
