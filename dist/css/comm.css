@@ -639,7 +639,7 @@ legend {
 #gnb .nav_depth1 > li > a > span {
   display: block;
   height: 135px;
-  line-height: 135px;
+  line-height: 145px;
 }
 
 #gnb .nav_depth1 > li > a:hover {
