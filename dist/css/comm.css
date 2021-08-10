@@ -691,6 +691,10 @@ legend {
   }
 }
 
+#search {
+  padding: 0;
+}
+
 #search .form-inline {
   position: relative;
   -ms-flex-wrap: nowrap;
