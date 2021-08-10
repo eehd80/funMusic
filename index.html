@@ -12,14 +12,13 @@
         <meta property="og:url" content="https://www.naver.com/" />
         <meta property="og:image" content="https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png" />
         <meta property="og:description" content="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <!-- 웹폰트 설정 -->
+        <link rel="stylesheet" href="./dist/fonts/fonts.css" />
         <link
             rel="stylesheet"
             href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
-        <link rel="stylesheet" href="./dist/vendor/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./dist/css/comm.css" />
     </head>
 
@@ -33,17 +32,23 @@
             <!-- 스크롤 시 .bg-light .navbar-light 추가 -->
             <!-- 마우스 오버시 .active 추가 -->
             <header id="header">
-                <div id="gnb" class="container">
+                <div class="container">
                     <h1 class="logo">
                         <a href="index.html">펀뮤직</a>
                     </h1>
                     <nav class="navbar navbar-expand-md">
                         <!-- Toggler/collapsibe Button -->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gnb">
+                            <span class="burger"></span>
+                        </button> -->
 
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <input type="checkbox" id="click" class="burger-input" />
+                        <label for="click">
+                            Menu
+                            <div class="burger"></div>
+                        </label>
+
+                        <div id="gnb" class="collapse navbar-collapse">
                             <h2 class="blind">전체메뉴</h2>
                             <ul class="navbar-nav nav_depth1">
                                 <li>
@@ -71,95 +76,133 @@
                                     <a href="#"><span>화상교육</span></a>
                                 </li>
                             </ul>
+                            <nav id="search" class="navbar navbar-expand-sm">
+                                <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+                                    <button class="btn" type="submit">Search</button>
+                                </form>
+                            </nav>
                         </div>
                     </nav>
-                    <nav id="search" class="navbar navbar-expand-sm">
-                        <form class="form-inline" action="/action_page.php">
-                          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                          <button class="btn" type="submit">Search</button>
-                        </form>
-                      </nav>
                 </div>
             </header>
             <!-- //header -->
             <!-- main -->
             <div id="main">
-                <div class="row container">
+                <div class="container info-area">
                     <!-- 게시판 -->
-                    <div class="col-3">
-                        <section id="section1" class="sec- sec-tab">
-                            <div class="container">
-                                <div class="sec-cont">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs ani-slide">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#bbs">공지사항</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#faq">자주하는 질문</a>
-                                        </li>
-                                    </ul>
-        
-                                    <!-- Tab panes -->
-                                    <div class="tab-content ani-slide">
-                                        <div class="tab-pane container active" id="bbs">
-                                           <h2>공지사항</h2>
-                                           <ul class="lst-bbs">
-                                               <li class="fst"><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">관리자</span></a></li>
-                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-11</span></a></li>
-                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-19</span></a></li>
-                                           </ul>
-                                           <a href="#" class="link-more">더보기</a>
-                                        </div>
-                                        <div class="tab-pane container fade" id="faq">
-                                            <h2>자주하는 질문</h2>
-                                           <ul class="lst-bbs">
-                                               <li class="fst"><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">관리자</span></a></li>
-                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-11</span></a></li>
-                                               <li><a href="#">[안내] 매달 새로운 곡이 업데이트 됩니다. <span class="time">2021-07-19</span></a></li>
-                                           </ul>
-                                           <a href="#" class="link-more">더보기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                    <div class="col-tab">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#bbs">공지사항</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#faq">자주하는 질문</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <section class="tab-pane active" id="bbs">
+                                <h2 class="blind">공지사항</h2>
+                                <ul class="tab-lst">
+                                    <li class="fst">
+                                        <a href="#">
+                                            <span class="time-area">2021-07 <span class="blind">-</span> <b class="day">23</b></span>
+                                            <p class="txt">
+                                                <span class="ell">[안내] 매달 새로운 곡이 새로운 곡이 업데이트 됩니다. </span>
+                                                <em class="source">관리자</em>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="ell">[안내] 매달 새로운 곡이 업데이트 새로운 곡이 업데이트 됩니다. </span>
+                                            <span class="time">2021-07-11</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="ell">[안내] 매달 새로운 곡이 새로운 곡이 업데이트 됩니다. </span>
+                                            <span class="time">2021-07-19</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="link-more">더보기</a>
+                            </section>
+                            <section class="tab-pane fade" id="faq">
+                                <h2 class="blind">자주하는 질문</h2>
+                                <ul class="tab-lst">
+                                    <li class="fst">
+                                        <a href="#">
+                                            <span class="time-area">2021-07 <span class="blind">-</span> <b class="day">23</b></span>
+                                            <p class="txt">
+                                                <span class="ell">자주하는 질문이 무엇인가요?</span>
+                                                <em class="source">관리자</em>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="ell">[안내] 매달 새로운 곡이 업데이트 새로운 곡이 업데이트 됩니다. </span>
+                                            <span class="time">2021-07-11</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="ell">[안내] 매달 새로운 곡이 새로운 곡이 업데이트 됩니다. </span>
+                                            <span class="time">2021-07-19</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="link-more">더보기</a>
+                            </section>
+                        </div>
                     </div>
                     <!-- 추천서비스 -->
-                    <div class="col-9">
-                        <h2 class="sec-tit">추천 서비스</h2>
+                    <section class="col-sevice sec-service">
+                        <h2 class="sec-tit1">추천 서비스</h2>
                         <ul class="lst-service">
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service1.jpg" alt="" />
                                     </span>
                                     <strong class="tit">악기반주기</strong>
-                                    <p class="txt">악기를 기초 - 고급까지 오케스트라교육</p>
+                                    <p class="txt">
+                                        악기를 기초 - 고급까지<br class="pc" />
+                                        오케스트라교육
+                                    </p>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service2.jpg" alt="" />
                                     </span>
-                                    <strong class="tit">QR코드로 제작된 악보</strong>
+                                    <strong class="tit"
+                                        >QR코드로 <br class="pc" />
+                                        제작된 악보</strong
+                                    >
                                     <p class="txt">오케스트라/악기별/솔로/이론</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service3.jpg" alt="" />
                                     </span>
                                     <strong class="tit">음악 방탈출게임</strong>
-                                    <p class="txt">음악문제를 풀고 방탈출 게임</p>
+                                    <p class="txt">
+                                        음악문제를 풀고<br class="pc" />
+                                        방탈출 게임
+                                    </p>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service4.jpg" alt="" />
                                     </span>
                                     <strong class="tit">음악게임</strong>
                                     <p class="txt">음악관련 게임</p>
@@ -168,122 +211,155 @@
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service5.jpg" alt="" />
                                     </span>
                                     <strong class="tit">3분영상</strong>
-                                    <p class="txt">정서활동을 위한 명상교육</p>
+                                    <p class="txt">
+                                        정서활동을 위한<br class="pc" />
+                                        명상교육
+                                    </p>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="thumb">
-                                        <img src="./images/thumb-service1.png" alt="">
+                                        <img src="./images/thumb-service6.jpg" alt="" />
                                     </span>
                                     <strong class="tit">리듬교실</strong>
                                     <p class="txt">재미있는 리듬교육</p>
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </section>
                 </div>
 
                 <!-- 추천학습 -->
-                <section class="sec-g sec-study">
+                <section class="sec-g sec-learning">
                     <div class="container">
-                        <h2 class="sec-tit">추천 학습</h2>
-                        <ul class="row">                    
-                            <li class="col-3">
+                        <h2 class="sec-tit2"><span>추천</span> 학습</h2>
+                        <ul class="row lst- lst-thumb">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom1.jpg" alt="" /></span>
+                                    <strong class="tit">박자별 리듬연습</strong>
+                                    <p class="txt">리듬치기와 리듬읽기 등</p>
+                                    <b>리듬연습</b>
+                                    <em>초등 & 중등</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom2.jpg" alt="" /></span>
+                                    <strong class="tit">관현악,합창과 같은 집단적 연주지휘</strong>
+                                    <p class="txt">템포,리듬,다이나믹,아고긱, 프레이징</p>
+                                    <b>지휘연습</b>
+                                    <em>초등 & 중등</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom3.jpg" alt="" /></span>
+                                    <strong class="tit">바로크, 고전주의, 낭만주의 음악</strong>
+                                    <p class="txt">작곡가별 음악감상</p>
+                                    <b>서양음악사</b>
+                                    <em>초등 & 중등</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom4.jpg" alt="" /></span>
+                                    <strong class="tit">초·중·고로 나눠서 파트연습 및 합주</strong>
+                                    <p class="txt">여러 가지 악기로 이루어진 합주체</p>
+                                    <b>오케스트라활동</b>
+                                    <em>초·중·고등</em>
                                 </a>
                             </li>
-                         </ul>
-                    </div>                    
+                        </ul>
+                    </div>
                 </section>
-                <section class="sec-g sec-study">
+                <section class="sec-g sec-lesson">
                     <div class="container">
-                        <h2 class="sec-tit">추천 레슨</h2>
-                        <ul class="row">                    
-                            <li class="col-3">
+                        <h2 class="sec-tit2"><span>추천</span> 레슨</h2>
+                        <ul class="row lst- lst-thumb">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom1.jpg" alt="" /></span>
+                                    <strong class="tit">무엇이 더 클까?</strong>
+                                    <p class="txt">재미있는 착시 현상으로 학생의 흥미를 유발할 수 있도록</p>
+                                    <em class="more">더보기</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom1.jpg" alt="" /></span>
+                                    <strong class="tit">속담 박사 지연!</strong>
+                                    <p class="txt">예빈이가 생활하면서 생활속에서 속담을 자주 사용하는</p>
+                                    <em class="more">더보기</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom1.jpg" alt="" /></span>
+                                    <strong class="tit">서로 다른 모습</strong>
+                                    <p class="txt">같은 성벽, 석탑, 조각상, 맷돌일지라도 그 모양과 생김이 다르게</p>
+                                    <em class="more">더보기</em>
                                 </a>
                             </li>
-                            <li class="col-3">
+                            <li class="col-md-3 col-6">
                                 <a href="#">
-                                    <span class="thumb"><img src="./images/thumb-service1.png" alt=""></span>
-                                    <strong class="tit">풍속화, 서민들의 문화를 나타내다</strong>
-                                    <p class="txt">01. 사회의 새로운 변화와 오늘 날의 우리 우리 우리 우리 </p>
-                                    <b>사회</b>
-                                    <em>초등 | 6학년</em>
+                                    <span class="thumb"><img src="./images/thumb-recom1.jpg" alt="" /></span>
+                                    <strong class="tit">서로 다른 모습</strong>
+                                    <p class="txt">같은 성벽, 석탑, 조각상, 맷돌일지라도 그 모양과 생김이 다르게</p>
+                                    <em class="more">더보기</em>
                                 </a>
                             </li>
-                         </ul>
-                    </div>                    
+                        </ul>
+                    </div>
                 </section>
             </div>
             <!-- //main -->
             <!-- footer -->
-            <footer>
+            <footer id="footer">
                 <div class="container">
-                    <h1>
-                        <a href="#" class="logo">SM</a>
+                    <h1 class="foot-logo">
+                        <a href="#">SM</a>
                     </h1>
                     <div class="foot-info">
-                        
+                        <ul class="crop">
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                        </ul>
+
+                        <address>
+                            37596) 경상북도 포항시 북구 양덕로30번길 5-1, <br class="m" />
+                            3층(양덕동)
+                        </address>
+
+                        <div class="tel">
+                            <a href="tel:1522-9789" class="link-tel">1522-9789</a>
+                            <span>(토,일,공휴일 휴무)</span>
+                            <dl class="tel-time">
+                                <dt>평일</dt>
+                                <dd>09:00 ~ 18:00</dd>
+                                <dt>점심시간</dt>
+                                <dd>12:00 ~ 13:00</dd>
+                            </dl>
+                        </div>
+
+                        <div class="copyright">Copyright (c) 2017. 신나는 오케스트라. All Right Reserved.</div>
+                    </div>
+                    <div class="foot-family">
+                        <input type="checkbox" name="familySite" id="familySite" />
+                        <label for="familySite" class="label-familysite">관련사이트</label>
+                        <nav class="wrap-familysite">
+                            <ul>
+                                <li><a href="#" target="_blank" title="새창열림">family1</a></li>
+                                <li><a href="#" target="_blank" title="새창열림">family2</a></li>
+                                <li><a href="#" target="_blank" title="새창열림">family3</a></li>
+                                <li><a href="#" target="_blank" title="새창열림">family4</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </footer>
@@ -291,11 +367,7 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./dist/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="./dist/vendor/scrollUp/jquery.scrollUp.min.js"></script>
-        <script src="./dist/js/form-submission-handler.js"></script>
-        <script src="./dist/vendor/include.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="./dist/js/comm.js"></script>
         <!--[if lt IE 9]>
             <script src="./dist/vendor/html5.js"></script>
